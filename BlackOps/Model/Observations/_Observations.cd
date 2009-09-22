@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pulse.OpsDB.Model.Observations.Event" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Pulse.OpsDB.Model.Observations.Observation" FixedFromPoint="true">
+      <Path>
+        <Point X="11" Y="3.38" />
+        <Point X="11" Y="4.125" />
+        <Point X="8.5" Y="4.125" />
+        <Point X="8.5" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Observations\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.Status" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Pulse.OpsDB.Model.Observations.Observation" FixedFromPoint="true">
+      <Path>
+        <Point X="11" Y="3.38" />
+        <Point X="11" Y="4.125" />
+        <Point X="13.25" Y="4.125" />
+        <Point X="13.25" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Observations\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.Feature" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Observations\Feature.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Nodes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.Measurement" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Pulse.OpsDB.Model.Observations.Observation" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="11" Y="3.38" />
+        <Point X="11" Y="3.626" />
+        <Point X="11" Y="3.626" />
+        <Point X="11" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\Observations\Measurement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.Node" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <AssociationLine Name="Features" Type="Pulse.OpsDB.Model.Observations.Feature">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.807" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Model\Observations\Node.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Features" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.Observation" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>Model\Observations\Observation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Node" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Pulse.OpsDB.Model.Observations.ObservationType" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Observations\ObservationType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
