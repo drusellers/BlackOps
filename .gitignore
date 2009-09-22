@@ -1,3 +1,5 @@
 *.user
 _*
 *.suo
+bin
+obj
