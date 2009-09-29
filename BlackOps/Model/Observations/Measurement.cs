@@ -1,4 +1,4 @@
-namespace Pulse.OpsDB.Model.Observations
+namespace BlackOps.Model.Observations
 {
     /// <summary>
     /// Typically measurments are periodic.
@@ -9,6 +9,6 @@ namespace Pulse.OpsDB.Model.Observations
     /// </summary>
     public class Measurement : Observation
     {
-        public virtual long Value{ get; set;}
+        public virtual long Value { get; set; }
     }
 }

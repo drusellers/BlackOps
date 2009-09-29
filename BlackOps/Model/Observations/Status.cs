@@ -1,6 +1,4 @@
-using Pulse.OpsDB.Model.Observations;
-
-namespace Pulse.OpsDB.Model.Observations
+namespace BlackOps.Model.Observations
 {
     /// <summary>
     /// Some objects will record state transitions. A Circuit Breaker might

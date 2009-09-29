@@ -1,7 +1,7 @@
-using FluentNHibernate.Framework;
-
-namespace Pulse.OpsDB.Model.Observations
+namespace BlackOps.Model.Observations
 {
+    using FluentNHibernate.Data;
+
     /// <summary>
     /// The universe of information in the OpsDB.
     /// </summary>

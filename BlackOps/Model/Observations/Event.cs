@@ -1,4 +1,4 @@
-namespace Pulse.OpsDB.Model.Observations
+namespace BlackOps.Model.Observations
 {
     public class Event : Observation
     {

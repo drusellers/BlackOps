@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using FluentNHibernate.Framework;
-
-namespace Pulse.OpsDB.Model.Observations
+namespace BlackOps.Model.Observations
 {
+    using System.Collections.Generic;
+    using FluentNHibernate.Data;
+
     /// <summary>
     /// A unit of business significant functionality. SLA's are written about features.
     /// A feature is probably implemented across many hosts (db, web, app), 

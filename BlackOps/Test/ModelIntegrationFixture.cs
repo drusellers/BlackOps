@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FluentNHibernate.AutoMap;
-using FluentNHibernate.Cfg;
-using FluentNHibernate.Framework;
-using FluentNHibernate.Metadata;
-using NHibernate;
-using NHibernate.Cfg;
-using NHibernate.Tool.hbm2ddl;
-using NUnit.Framework;
-using FluentNHibernate;
-using Pulse.OpsDB.Model.Observations;
-
-namespace Pulse.OpsDB.Test
+﻿namespace BlackOps.Test
 {
-    
+    using System.Collections.Generic;
+    using FluentNHibernate.Automapping;
+    using FluentNHibernate.Cfg;
+    using FluentNHibernate.Cfg.Db;
+    using FluentNHibernate.Testing;
+    using Model.Observations;
+    using NHibernate;
+    using NHibernate.Tool.hbm2ddl;
+    using NUnit.Framework;
+
     public class PersistentTestFixtureBase
     {
         protected ISessionFactory _factory;
@@ -23,26 +17,21 @@ namespace Pulse.OpsDB.Test
         [TestFixtureSetUp]
         public void BeforeFixureStarts()
         {
-            var autoMappings =
-                AutoPersistenceModel
-                    .MapEntitiesFromAssemblyOf<ObservationType>()
-                    .MergeWithAutoMapsFromAssemblyOf<Entity>()
-                    .Where(t => t.Name == "Entity" || t.Namespace.StartsWith("Pulse.OpsDB.Model") && t.Name != "Observation")
-                    ;
-            
-            var conf = new Configuration();
-
-            MsSqlConfiguration
-                .MsSql2005
-                .ConnectionString.Is("Server=127.0.0.1;Initial Catalog=OpsDB_Test;Integrated Security=True")
-                .ShowSql()
-                .ConfigureProperties(conf)
-                .AddAutoMappings(autoMappings);
-            
-            _factory = conf.BuildSessionFactory();
-
-            new SchemaExport(conf).Drop(false,true);
-            new SchemaExport(conf).Create(false,true);
+            _factory = Fluently.Configure()
+                .Database(() => MsSqlConfiguration
+                                    .MsSql2005
+                                    .ConnectionString(s => s.Database("BlackOps_Test")
+                                                               .Server(".")
+                                                               .TrustedConnection())
+                                    .ShowSql())
+                .Mappings(mc => mc.AutoMappings.Add(() => AutoMap.AssemblyOf<ObservationType>()
+                                                              .Where(t => t.Name == "Entity" || t.Namespace.StartsWith("BlackOps.Model") && t.Name != "Observation")))
+                .ExposeConfiguration(cfg =>
+                {
+                    new SchemaExport(cfg).Drop(false, true);
+                    new SchemaExport(cfg).Create(false, true);
+                })
+                .BuildSessionFactory();
         }
     }
 
@@ -73,7 +62,7 @@ namespace Pulse.OpsDB.Test
                     .VerifyTheMappings();
 
                 new PersistenceSpecification<Feature>(session)
-                    .CheckList(o => o.Nodes, new List<Node> { new Node() })
+                    .CheckList(o => o.Nodes, new List<Node> {new Node()})
                     .VerifyTheMappings();
             }
         }
