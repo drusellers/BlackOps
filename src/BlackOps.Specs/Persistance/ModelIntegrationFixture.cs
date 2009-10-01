@@ -9,6 +9,7 @@
     using NHibernate;
     using NHibernate.Tool.hbm2ddl;
     using NUnit.Framework;
+    using Persistance.Mappings;
 
     public class PersistentTestFixtureBase
     {
@@ -24,8 +25,7 @@
                                                                .Server(".")
                                                                .TrustedConnection())
                                     .ShowSql())
-                .Mappings(mc => mc.AutoMappings.Add(() => AutoMap.AssemblyOf<ObservationType>()
-                                                              .Where(t => t.Name == "Entity" || t.Namespace.StartsWith("BlackOps.Model") && t.Name != "Observation")))
+                .Mappings(BlackOpsAutoMap.BuildMaps)
                 .ExposeConfiguration(cfg =>
                 {
                     new SchemaExport(cfg).Drop(false, true);
