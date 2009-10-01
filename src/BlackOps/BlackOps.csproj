@@ -84,7 +84,6 @@
     <Compile Include="Model\Observations\Observation.cs" />
     <Compile Include="Model\Observations\ObservationType.cs" />
     <Compile Include="Model\Observations\Status.cs" />
-    <Compile Include="Test\ModelIntegrationFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +92,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Model\Expectations\" />
+    <Folder Include="Persistance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
