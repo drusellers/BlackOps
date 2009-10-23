@@ -1,5 +1,6 @@
 ﻿namespace BlackOps.Model.Observations
 {
+    using System;
     using FluentNHibernate.Data;
 
     /// <summary>
@@ -18,5 +19,10 @@
         /// Observations must have a type
         /// </summary>
         public virtual ObservationType Type { get; set; }
+
+        /// <summary>
+        /// Observations occur at a point in time
+        /// </summary>
+        public virtual DateTime ObservedAt { get; set; }
     }
 }
