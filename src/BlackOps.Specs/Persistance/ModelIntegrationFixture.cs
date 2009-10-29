@@ -44,21 +44,18 @@
             using (var session = _factory.OpenSession())
             {
                 new PersistenceSpecification<ObservationType>(session)
-                    .CheckProperty(o => o.Name, "Requests/Second")
+                    .CheckProperty(o => o.Key, "Requests/Second")
+                    .CheckProperty(o => o.Description, "The requests per second")
                     .VerifyTheMappings();
 
                 new PersistenceSpecification<Node>(session)
                     .CheckProperty(o => o.UniqueId, "CONNERY")
                     .VerifyTheMappings();
 
-                new PersistenceSpecification<Measurement>(session)
-                    .CheckProperty(o => o.Value, 100l)
-                    .VerifyTheMappings();
 
-                new PersistenceSpecification<Event>(session)
-                    .VerifyTheMappings();
-
-                new PersistenceSpecification<Status>(session)
+                new PersistenceSpecification<Observation>(session)
+                    .CheckProperty(o=>o.Measurement, 23)
+                    .CheckProperty(o=>o.Status, "OFF")
                     .VerifyTheMappings();
 
                 new PersistenceSpecification<Feature>(session)

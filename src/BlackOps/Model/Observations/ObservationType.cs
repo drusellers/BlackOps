@@ -7,6 +7,7 @@ namespace BlackOps.Model.Observations
     /// </summary>
     public class ObservationType : Entity
     {
-        public virtual string Name { get; set; }
+        public virtual string Key { get; set; }
+        public virtual string Description { get; set; }
     }
 }

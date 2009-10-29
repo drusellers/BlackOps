@@ -6,9 +6,8 @@
     /// <summary>
     /// The heart of the OpsDB. Each is a single data point.
     /// Server nodes will mainly send performance stats to OpsDB (Measurements).
-    /// 
     /// </summary>
-    public abstract class Observation : Entity
+    public class Observation : Entity
     {
         /// <summary>
         /// Observation needs a node from which it came.
@@ -24,5 +23,15 @@
         /// Observations occur at a point in time
         /// </summary>
         public virtual DateTime ObservedAt { get; set; }
+
+        /// <summary>
+        /// Observations have a value
+        /// </summary>
+        public virtual double Measurement { get; set; }
+
+        /// <summary>
+        /// Observation status
+        /// </summary>
+        public virtual string Status { get; set; }
     }
 }

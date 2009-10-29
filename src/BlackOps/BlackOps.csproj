@@ -77,20 +77,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Observations\Event.cs" />
     <Compile Include="Model\Observations\Feature.cs" />
-    <Compile Include="Model\Observations\Measurement.cs" />
     <Compile Include="Model\Observations\Node.cs" />
     <Compile Include="Model\Observations\Observation.cs" />
     <Compile Include="Model\Observations\ObservationType.cs" />
-    <Compile Include="Model\Observations\Status.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Persistance\Mappings\BlackOpsAutoMap.cs" />
     <Compile Include="Persistance\NHibernateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Model\Observations\_Observations.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\Expectations\" />
