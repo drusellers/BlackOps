@@ -12,18 +12,31 @@
 // specific language governing permissions and limitations under the License.
 namespace BlackOps.Client
 {
-    public class WalkieTakie
+    public class Node
     {
+        string _name;
+
+        public Node(string name)
+        {
+            _name = name;
+        }
+
         //kojack with a kodax
-        public void ReportStatus(string feature, string node, string status)
+        public void ReportStatus(string feature, string status)
         {
         }
 
-        public void ReportMeasurement(string feature, string node,double value)
+        public void ReportMeasurement(string feature, double value)
         {
         }
 
-        public void ReportEvent(string feature, string node)
+
+        // observation {
+        //     node = "/usa/east/srv23"
+        //     event = "newsale"
+        //     feature = "/cashier/sales"
+        // }
+        public void ReportEvent(string feature)
         {
         }
 
@@ -32,7 +45,7 @@ namespace BlackOps.Client
         {
             //code
             //code
-            ReportEvent("/APP/MAKE/MONEY", "srvtopeka22");
+            ReportEvent("/APP/MAKE/MONEY");
             //i think this should happen off of a node object. 
         }
     }
