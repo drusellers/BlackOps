@@ -12,6 +12,9 @@
 // specific language governing permissions and limitations under the License.
 namespace BlackOps.Client
 {
+    using System;
+    using System.Linq.Expressions;
+
     public class Node
     {
         string _name;
@@ -22,12 +25,33 @@ namespace BlackOps.Client
         }
 
         //kojack with a kodax
-        public void ReportStatus(string feature, string status)
+        public void ReportStatus(Expression<Action<Features>> feature, Expression<Action<Statuses>> status)
         {
+            var f = MethodCallStringulator.Convert(feature);
+            var s = MethodCallStringulator.Convert(status);
+            var o = new Observation()
+                    {
+                        Feature = f,
+                        Status = s,
+                        Node = _name
+                    };
+            // observation {
+            //     Feature = "/msmq/up"
+            //     Status = "down"
+            //     Node = "srvtopeka22"
+            // }
         }
 
-        public void ReportMeasurement(string feature, double value)
+        public void ReportMeasurement(Expression<Action<Features>> feature, double value)
         {
+            var f = MethodCallStringulator.Convert(feature);
+            var v = value;
+            var o = new Observation()
+                    {
+                        Node = _name,
+                        Feature = f,
+                        Value = v
+                    };
         }
 
 
@@ -36,17 +60,15 @@ namespace BlackOps.Client
         //     event = "newsale"
         //     feature = "/cashier/sales"
         // }
-        public void ReportEvent(string feature)
+        public void ReportEvent(Expression<Action<Features>> feature, string evt)
         {
-        }
-
-        //what would this look like?
-        public void Usage()
-        {
-            //code
-            //code
-            ReportEvent("/APP/MAKE/MONEY");
-            //i think this should happen off of a node object. 
+            var f = MethodCallStringulator.Convert(feature);
+            var o = new Observation()
+                    {
+                        Event = evt,
+                        Feature = f,
+                        Node = _name
+                    };
         }
     }
 

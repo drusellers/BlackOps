@@ -8,23 +8,28 @@ namespace BlackOps.Specs
     public class ExtensionMethod_Expression_Test
     {
         [Test]
-        public void NAME()
+        public void NAME() //convert b.Bill().Queue() to 'bob/bill/queue'
         {
-            Expression<Action<Bob>> xx = b => b.Bill().Queue();
+
+            Expression<Action<FeatureRoot>> xx = b => b.Bill().Queue();
 
             MethodCallExpression m = (MethodCallExpression)xx.Body;
-
-            Console.WriteLine(m);
+            string v = m.ToString();
+            v = v.Replace("(", "");
+            v = v.Replace(")", "");
+            v = v.Replace(".", "/");
+            v = "/" + v;
+            Console.WriteLine(v);
         }
     }
 
-    public class Bob
+    public class FeatureRoot
     {
         
     }
-    public static class BobExt
+    public static class MyFeatureExtensions
     {
-        public static BillFeatures Bill(this Bob bob)
+        public static BillFeatures Bill(this FeatureRoot featureRoot)
         {
             return null;
         }

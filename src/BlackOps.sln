@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackOps.Specs", "BlackOps.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackOps.Client", "BlackOps.Client\BlackOps.Client.csproj", "{29A201B5-5E0B-48B6-8B91-5671979AEC42}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{DAFAE50A-68C7-4567-B21B-E7EF14E15E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackOps.Client.Specs", "BlackOps.Client.Specs\BlackOps.Client.Specs.csproj", "{7DE251FB-A5CF-4693-BB54-BF89516B29A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,8 +29,16 @@ Global
 		{29A201B5-5E0B-48B6-8B91-5671979AEC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A201B5-5E0B-48B6-8B91-5671979AEC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A201B5-5E0B-48B6-8B91-5671979AEC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE251FB-A5CF-4693-BB54-BF89516B29A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE251FB-A5CF-4693-BB54-BF89516B29A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE251FB-A5CF-4693-BB54-BF89516B29A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE251FB-A5CF-4693-BB54-BF89516B29A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C4BDEB6-63A1-4C0D-9A6E-DB7C777188F1} = {DAFAE50A-68C7-4567-B21B-E7EF14E15E90}
+		{682E6B1F-0815-431E-8499-68BF44EB2DD8} = {DAFAE50A-68C7-4567-B21B-E7EF14E15E90}
 	EndGlobalSection
 EndGlobal

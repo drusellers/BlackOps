@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{29A201B5-5E0B-48B6-8B91-5671979AEC42}</ProjectGuid>
+    <ProjectGuid>{7DE251FB-A5CF-4693-BB54-BF89516B29A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlackOps.Client</RootNamespace>
-    <AssemblyName>BlackOps.Client</AssemblyName>
+    <RootNamespace>BlackOps.Client.Specs</RootNamespace>
+    <AssemblyName>BlackOps.Client.Specs</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,21 +31,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.0.8332, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\NodeBuilder.cs" />
-    <Compile Include="Features.cs" />
-    <Compile Include="Observation.cs" />
-    <Compile Include="MethodCallStringulator.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="Setting_Up_A_Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Xxxx\AspMvc\AspMvcObserver.cs" />
-    <Compile Include="Xxxx\MassTransit\MassTransitObserver.cs" />
-    <Compile Include="Xxxx\NHibernate\NHibernateObserver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlackOps.Client\BlackOps.Client.csproj">
+      <Project>{29A201B5-5E0B-48B6-8B91-5671979AEC42}</Project>
+      <Name>BlackOps.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
