@@ -42,7 +42,7 @@ namespace BlackOps.Client
             // }
         }
 
-        public void ReportMeasurement(Expression<Action<Features>> feature, double value)
+        public void ReportMeasurement(Expression<Action<Features>> feature, Expression<Action<Measurements>> measurement, double value)
         {
             var f = MethodCallStringulator.Convert(feature);
             var v = value;

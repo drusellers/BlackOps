@@ -4,7 +4,7 @@ namespace BlackOps.Client.Configuration
 
     public class NodeBuilder
     {
-        public static Node Build(string name, string mongoAddress)
+        public static Node Build(string name)
         {
             return new Node(name);
         }
